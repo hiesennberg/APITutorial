@@ -10,7 +10,7 @@ from sqlalchemy import func
 router = APIRouter( tags = ['posts'])
 
 @router.get("/posts", response_model=List[Schema.PostOut])
-async def get_post(db: Session = Depends(get_db), limit : int = 10, skip : int = 0, search : Optional[str] = ""):
+async def get_post(db: Session = Depends(get_db), limit : int = 10, skip : int = 0, search : Optional[str] = "",user_id: int = Depends(oauth2.get_current_user)):
     
     
     posts = db.query(models.Post,func.count(models.Votes.post_id).label("votes")).join(
