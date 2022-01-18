@@ -32,7 +32,7 @@ def vote(vote: Schema.Vote,db: Session=Depends(get_db),user_id: int = Depends(oa
             return(v)
 
         except Exception as e:
-            print(dir(e))
+            #print(dir(e))
             #reason = e.reason
             #print(reason)
 
