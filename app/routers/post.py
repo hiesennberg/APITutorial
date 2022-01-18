@@ -73,8 +73,7 @@ def delete_post(id: int, db: Session = Depends(get_db), user_id : int = Depends(
 
     post = db.query(models.Post).filter(models.Post.id == id)
     post_data = post.first()
-    #print(type(post.first().user_id))
-    #print(type(user_id.id))
+    
 
 
     if post.first() == None:
