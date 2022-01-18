@@ -38,7 +38,7 @@ def vote(vote: Schema.Vote,db: Session=Depends(get_db),user_id: int = Depends(oa
 
             if "already exists" in str(e):
                 raise HTTPException(
-                    status_code=status.HTTP_403_FORBIDDEN, detail="Already voted")
+                    status_code=status.HTTP_409_CONFLICT, detail="Already voted")
             
             else:
                 raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=str(e))
