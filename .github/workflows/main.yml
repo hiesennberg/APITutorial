@@ -4,15 +4,17 @@ on: [push, pull_request]
 
 jobs:
   job1:
+    enviroement:
+      name: TestEnv
     env: 
-      DATABASE_HOSTNAME: localhost
-      DATABASE_PORT: 5432
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: power123#
-      DATABASE_NAME: FastAPI
-      SECRET_KEY: HelloForTheSecret
-      ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      DATABASE_HOSTNAME: ${{DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{DATABASE_PORT}}
+      DATABASE_USERNAME: ${{DATABASE_USERNAME}}
+      DATABASE_PASSWORD: ${{DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{DATABASE_NAME}}
+      SECRET_KEY: ${{SECRET_KEY}}
+      ALGORITHM: ${{ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{ACCESS_TOKEN_EXPIRE_MINUTES}}
     runs-on: ubuntu-latest
     steps:
       - name: pulling get repo
