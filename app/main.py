@@ -37,7 +37,7 @@ app.include_router(votes.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World khi khi khi"}
+    return {"message": "Heroku deployment via git sucessfull"}
 
 
 
