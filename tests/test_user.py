@@ -13,7 +13,7 @@ from app.config import settings
 def test_root(client):
     res = client.get("/")
     #print(res.json().get("message"))
-    assert res.json().get("message") == "Hello World khi khi khi"
+    
     assert res.status_code == 200
     
 def test_user_creation(client):
