@@ -55,3 +55,4 @@ def vote(vote: Schema.Vote,db: Session=Depends(get_db),user_id: int = Depends(oa
             votequery.delete()
             db.commit()
             return {"message":"vote removed"}
+#ll
