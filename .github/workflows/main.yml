@@ -21,7 +21,7 @@ jobs:
         image: postgres
         env:
           POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-          POSRGRES_DB: ${{secrets.DATABASE_NAME}}
+          POSRGRES_DB: ${{secrets.DATABASE_NAME}}_test
         ports:
           - 5432:5432
 
@@ -49,7 +49,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Test Code
-        run: pytest
+        run: pytest -v -s
       
 
 
